@@ -1,0 +1,54 @@
+create table STG_Customer(
+    customer_ID int identity(1,1) primary key,
+	first_name VARCHAR (255) NOT NULL,
+	last_name VARCHAR (255) NOT NULL,
+	phone VARCHAR (25),
+	email VARCHAR (255) NOT NULL,
+	street VARCHAR (255),
+	city VARCHAR (50),
+	state VARCHAR (25),
+	zip_code VARCHAR (50)
+
+)
+
+CREATE TABLE STG_Stores (
+	store_id INT IDENTITY (1, 1) PRIMARY KEY,
+	store_name VARCHAR (255) NOT NULL,
+	phone VARCHAR (25),
+	email VARCHAR (255),
+	street VARCHAR (255),
+	city VARCHAR (255),
+	state VARCHAR (10),
+	zip_code VARCHAR (5)
+
+);
+
+CREATE TABLE STG_Orders (
+	order_id INT IDENTITY (1, 1) PRIMARY KEY,
+	order_status tinyint NOT NULL,
+	order_date DATE NOT NULL,
+	required_date DATE NOT NULL,
+	shipped_date DATE
+
+);
+
+CREATE TABLE STG_Products (
+	product_id INT IDENTITY (1, 1) PRIMARY KEY,
+	product_name VARCHAR (255) NOT NULL,
+	brand_name varchar(25) NOT NULL,
+	model_year SMALLINT NOT NULL,
+	list_price DECIMAL (10, 2) NOT NULL
+
+);
+
+CREATE TABLE STG_Staffs (
+	staff_id INT IDENTITY (1, 1) PRIMARY KEY,
+	first_name VARCHAR (50) NOT NULL,
+	last_name VARCHAR (50) NOT NULL,
+	email VARCHAR (255) NOT NULL UNIQUE,
+	phone VARCHAR (25),
+	active tinyint NOT NULL,
+	 
+);
+
+

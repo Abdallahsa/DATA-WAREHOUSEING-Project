@@ -1,0 +1,615 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/6/2023 9:08:08 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-QTQU105"
+  DTS:CreatorName="DESKTOP-QTQU105\Prof"
+  DTS:DTSID="{39E4045F-5D04-43A3-BA15-29BC63BF3753}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{EFB48B3F-6C0A-4DF0-99BC-C42DF4F42262}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-QTQU105.Bike Store]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C97D9C92-4C1D-43B9-AAC6-6448CAA46919}"
+      DTS:ObjectName="DESKTOP-QTQU105.Bike Store">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-QTQU105;Initial Catalog=Bike Store;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{C97D9C92-4C1D-43B9-AAC6-6448CAA46919}DESKTOP-QTQU105.Bike Store;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-QTQU105.BikeStoreDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AA808800-ED2F-4546-8FF4-8BB41F308079}"
+      DTS:ObjectName="DESKTOP-QTQU105.BikeStoreDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-QTQU105;Initial Catalog=BikeStoreDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{AA808800-ED2F-4546-8FF4-8BB41F308079}DESKTOP-QTQU105.BikeStoreDW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-QTQU105.BikeStoreDW 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7D350BFF-1B98-452D-8426-E14BDD42CAD3}"
+      DTS:ObjectName="DESKTOP-QTQU105.BikeStoreDW 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-QTQU105;Initial Catalog=BikeStoreDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{7D350BFF-1B98-452D-8426-E14BDD42CAD3}DESKTOP-QTQU105.BikeStoreDW 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-QTQU105.BikeStoreDW 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F1C4A28C-4D14-41E6-8E47-124C97F67897}"
+      DTS:ObjectName="DESKTOP-QTQU105.BikeStoreDW 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-QTQU105;Initial Catalog=BikeStoreDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{F1C4A28C-4D14-41E6-8E47-124C97F67897}DESKTOP-QTQU105.BikeStoreDW 2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-QTQU105.BikeStoreDW 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{91445E03-3F7D-4183-A303-6EA9A0616FB8}"
+      DTS:ObjectName="DESKTOP-QTQU105.BikeStoreDW 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-QTQU105;Initial Catalog=BikeStoreDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{91445E03-3F7D-4183-A303-6EA9A0616FB8}DESKTOP-QTQU105.BikeStoreDW 3;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\from DW to facts"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F661C4B7-3C27-433C-998F-604AEF15571B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="from DW to facts"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\from DW to facts\dateDim"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="dateDim"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\from DW to facts\dateDim.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-QTQU105.BikeStoreDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-QTQU105.BikeStoreDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      lineageId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      dataType="ui1"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[DaySuffix]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="DaySuffix" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[Weekday]"
+                      dataType="ui1"
+                      name="Weekday" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[WeekDayName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="WeekDayName" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[WeekDayName_Short]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="WeekDayName_Short" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[WeekDayName_FirstLetter]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="WeekDayName_FirstLetter" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[DOWInMonth]"
+                      dataType="ui1"
+                      name="DOWInMonth" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[DayOfYear]"
+                      dataType="i2"
+                      name="DayOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[WeekOfMonth]"
+                      dataType="ui1"
+                      name="WeekOfMonth" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[WeekOfYear]"
+                      dataType="ui1"
+                      name="WeekOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      dataType="ui1"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[MonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="MonthName" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[MonthName_Short]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="MonthName_Short" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[MonthName_FirstLetter]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="MonthName_FirstLetter" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      dataType="ui1"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[QuarterName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="QuarterName" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[MMYYYY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="MMYYYY" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[MonthYear]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="MonthYear" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[IsWeekend]"
+                      dataType="bool"
+                      name="IsWeekend" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[IsHoliday]"
+                      dataType="bool"
+                      name="IsHoliday" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[HolidayName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="HolidayName" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[SpecialDays]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SpecialDays" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[FinancialYear]"
+                      dataType="i4"
+                      name="FinancialYear" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[FinancialQuater]"
+                      dataType="i4"
+                      name="FinancialQuater" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[FinancialMonth]"
+                      dataType="i4"
+                      name="FinancialMonth" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[FirstDateofYear]"
+                      dataType="dbDate"
+                      name="FirstDateofYear" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[LastDateofYear]"
+                      dataType="dbDate"
+                      name="LastDateofYear" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[FirstDateofQuater]"
+                      dataType="dbDate"
+                      name="FirstDateofQuater" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[LastDateofQuater]"
+                      dataType="dbDate"
+                      name="LastDateofQuater" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[FirstDateofMonth]"
+                      dataType="dbDate"
+                      name="FirstDateofMonth" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[LastDateofMonth]"
+                      dataType="dbDate"
+                      name="LastDateofMonth" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[FirstDateofWeek]"
+                      dataType="dbDate"
+                      name="FirstDateofWeek" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[LastDateofWeek]"
+                      dataType="dbDate"
+                      name="LastDateofWeek" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[CurrentYear]"
+                      dataType="i2"
+                      name="CurrentYear" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[CurrentQuater]"
+                      dataType="i2"
+                      name="CurrentQuater" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[CurrentMonth]"
+                      dataType="i2"
+                      name="CurrentMonth" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[CurrentWeek]"
+                      dataType="i2"
+                      name="CurrentWeek" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].ExternalColumns[CurrentDay]"
+                      dataType="i2"
+                      name="CurrentDay" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\from DW to facts\FACTs"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FACTs"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_Orders]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\from DW to facts\FACTs.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-QTQU105.BikeStoreDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-QTQU105.BikeStoreDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input].ExternalColumns[time_id]"
+                      lineageId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output].Columns[DateKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      dataType="i4"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input].ExternalColumns[staff_id]"
+                      dataType="i4"
+                      name="staff_id" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input].ExternalColumns[store_id]"
+                      dataType="i4"
+                      name="store_id" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input].ExternalColumns[time_id]"
+                      dataType="i4"
+                      name="time_id" />
+                    <externalMetadataColumn
+                      refId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input].ExternalColumns[order_num]"
+                      dataType="i4"
+                      name="order_num" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\from DW to facts\FACTs.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\from DW to facts\FACTs.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\from DW to facts\FACTs.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\from DW to facts\FACTs.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\from DW to facts\FACTs.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\from DW to facts.Paths[OLE DB Source Output]"
+              endId="Package\from DW to facts\FACTs.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\from DW to facts\dateDim.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\from DW to facts"
+          TopLeft="405.833311159579,250.466664924953" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\from DW to facts">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="110.4,41.6"
+          Id="Package\from DW to facts\FACTs"
+          TopLeft="424.999993667007,202.999996975064" />
+        <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\from DW to facts\dateDim"
+          TopLeft="417.999993771315,82.3999992251396" />
+        <EdgeLayout
+          Id="Package\from DW to facts.Paths[OLE DB Source Output]"
+          TopLeft="478.299993719161,123.99999922514">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78.9999977499248"
+              Start="0,0"
+              End="0,71.4999977499248">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.4999977499248" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\from DW to facts\FACTs">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\from DW to facts\dateDim">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
